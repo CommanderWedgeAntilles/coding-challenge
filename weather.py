@@ -1,12 +1,17 @@
 
 
 def get_temperature_by_city(city: str = "Provo"):
-    temperature = temperature_data.get(city, 76)
+    #access dict through key, lowercase all entries
+    key = city.lower()
+    #added a check on the keys
+    if key in temperature_data:
+        temperature = temperature_data.get(key)
+    else:
+        temperature = "unknown!"
     return temperature
 
-
 def convert_fahrenheit_to_celsius(ftemp):
-    return round((ftemp - 32) / 1.8)
+    return round((ftemp - 32)/1.8)
 
 
 temperature_data = {

@@ -5,6 +5,7 @@ import weather
 
 def test_app_index():
     result = app.hello_world()
+    #'->"; changed in result to result ==
     assert 'weather machine' in result
 
 
